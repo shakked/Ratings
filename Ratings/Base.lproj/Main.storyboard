@@ -110,6 +110,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Tf7-Lg-SAd" kind="push" identifier="PickGame" id="aOv-L5-Pai"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -122,17 +125,17 @@
                     <navigationItem key="navigationItem" title="Add Player" id="1qS-F7-aJD">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Axh-qU-SOO">
                             <connections>
-                                <segue destination="oBE-8d-gBR" kind="unwind" unwindAction="cancelToPlayersViewController:" id="2af-5M-eOm"/>
+                                <segue destination="oBE-8d-gBR" kind="unwind" identifier="CancelPlayerDetail" unwindAction="cancelToPlayersViewController:" id="2af-5M-eOm"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="3Nh-dk-ybc">
                             <connections>
-                                <segue destination="oBE-8d-gBR" kind="unwind" unwindAction="savePlayerDetail:" id="RHt-VN-B1k"/>
+                                <segue destination="oBE-8d-gBR" kind="unwind" identifier="SavePlayerDetail" unwindAction="savePlayerDetail:" id="RHt-VN-B1k"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="detailLabel" destination="rX2-32-S5k" id="svH-16-Um5"/>
+                        <outlet property="detailLabel" destination="VFK-ac-cw0" id="AoM-BJ-n7G"/>
                         <outlet property="nameTextField" destination="WxM-Tn-uEq" id="lJe-8N-hX9"/>
                     </connections>
                 </tableViewController>
@@ -140,6 +143,45 @@
                 <exit id="oBE-8d-gBR" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1469" y="-197"/>
+        </scene>
+        <!--Choose Game-->
+        <scene sceneID="77J-wR-WeY">
+            <objects>
+                <tableViewController id="Tf7-Lg-SAd" customClass="GamePickerTableViewController" customModule="Ratings" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="mtu-em-0JG">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GameCell" textLabel="Ns0-b2-d4z" style="IBUITableViewCellStyleDefault" id="WPh-nw-qXO">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WPh-nw-qXO" id="Pcl-Kq-OTJ">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ns0-b2-d4z">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="1eD-IB-Ttp" kind="unwind" identifier="SaveSelectedGame" unwindAction="selectedGame:" id="HE2-CI-XK7"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Tf7-Lg-SAd" id="d9k-19-Anv"/>
+                            <outlet property="delegate" destination="Tf7-Lg-SAd" id="yV2-gp-Nge"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Choose Game" id="qf1-Nj-MOL"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="luv-Ez-FNo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="1eD-IB-Ttp" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1867" y="-197"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="MCP-ce-lV1">
