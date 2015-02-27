@@ -17,5 +17,6 @@ class Player: NSObject {
         self.name = name
         self.game = game
         self.rating = rating
+        super.init()
     }
 }
